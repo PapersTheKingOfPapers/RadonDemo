@@ -20,9 +20,9 @@ public class AnimBoolToAnimBool : MonoBehaviour
 
     private void Update()
     {
-        if(_animFrom.GetBool(_fromParaName) == true && _toggled == false)
+        if (_toggled == false && _animFrom.GetBool(_fromParaName) != _animTo.GetBool(_toParaName))
         {
-            _animTo.SetBool(_toParaName, !_animTo.GetBool(_toParaName));
+            _animTo.SetBool(_toParaName, _animFrom.GetBool(_fromParaName));
 
             if(_persist == true)
             {

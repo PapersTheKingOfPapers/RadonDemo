@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInterract : MonoBehaviour
+public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private float _interractRange = 2f;
 
@@ -17,7 +17,7 @@ public class PlayerInterract : MonoBehaviour
     {
 
         RaycastHit _hit;
-        if (Input.GetButtonDown("Interract"))
+        if (Input.GetButtonDown("Interact"))
         {
             //Debug.DrawRay(transform.position, transform.forward, Color.yellow, 10f);
             if (Physics.SphereCast(transform.position, 0.5f, transform.forward, out _hit, _interractRange, _objLayer))
