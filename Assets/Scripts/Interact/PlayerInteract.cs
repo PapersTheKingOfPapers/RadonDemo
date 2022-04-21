@@ -15,7 +15,6 @@ public class PlayerInteract : MonoBehaviour
 
     public void Update()
     {
-
         RaycastHit _hit;
         if (Input.GetButtonDown("Interact"))
         {

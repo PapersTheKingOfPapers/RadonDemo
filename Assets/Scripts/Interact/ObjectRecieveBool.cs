@@ -33,6 +33,7 @@ public class ObjectRecieveBool : MonoBehaviour
         else if (_timed == true)
         {
             StartCoroutine(Timer());
+            _anim.SetBool(_boolName, !_anim.GetBool(_boolName));
             _activated = true;
         }
         else
