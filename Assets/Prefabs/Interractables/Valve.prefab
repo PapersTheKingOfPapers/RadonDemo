@@ -2957,8 +2957,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.4}
-  m_Center: {x: 0, y: 0, z: 0.1}
+  m_Size: {x: 0.5, y: 0.5, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0.25}
 --- !u!114 &6092289589339136599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2977,6 +2977,7 @@ MonoBehaviour:
   _waitSeconds: 2
   _delayed: 0
   _delaySeconds: 1
+  _persist: 0
 --- !u!1 &6092289589477237484
 GameObject:
   m_ObjectHideFlags: 0

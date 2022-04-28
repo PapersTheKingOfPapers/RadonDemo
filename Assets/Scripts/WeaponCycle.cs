@@ -12,9 +12,11 @@ public class WeaponCycle : MonoBehaviour
 
     [SerializeField] private string _weaponTrigger;
 
-    private float _currentScroll = 0;
+    private static float _currentScroll = 0;
 
     private int _previousWeaponState;
+
+    public static float CurrentScroll { get => _currentScroll;}
 
     private void Update()
     {

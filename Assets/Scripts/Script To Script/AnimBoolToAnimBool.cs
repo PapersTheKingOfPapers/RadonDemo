@@ -9,8 +9,8 @@ public class AnimBoolToAnimBool : MonoBehaviour
     [SerializeField] private string _fromParaName;
 
     [Header("Animator where the bool is going to (Output)")]
-    [SerializeField] private Animator _animTo;
-    [SerializeField] private string _toParaName;
+    [SerializeField] private Animator[] _animTo;
+    [SerializeField] private string[] _toParaName;
 
     [Header("Variables")]
     [Tooltip("When toggled, does it stay that way?")]
@@ -20,9 +20,12 @@ public class AnimBoolToAnimBool : MonoBehaviour
 
     private void Update()
     {
-        if (_toggled == false && _animFrom.GetBool(_fromParaName) != _animTo.GetBool(_toParaName))
+        if (_toggled == false && _animFrom.GetBool(_fromParaName) != _animTo[0].GetBool(_toParaName[0]))
         {
-            _animTo.SetBool(_toParaName, _animFrom.GetBool(_fromParaName));
+            for(int i = 0; i < _animTo.Length; i++)
+            {
+                _animTo[i].SetBool(_toParaName[i], _animFrom.GetBool(_fromParaName));
+            }
 
             if(_persist == true)
             {
