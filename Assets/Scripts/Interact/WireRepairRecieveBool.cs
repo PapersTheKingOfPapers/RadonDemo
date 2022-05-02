@@ -11,8 +11,6 @@ public class WireRepairRecieveBool : MonoBehaviour
     [SerializeField] private float _requiredTool = 0;
 
     private float _currentWeapon;
-
-    private AnimatorStateInfo _stateInfo;
     private bool _activated = false;
 
     private SurfCharacter _sChar;
@@ -32,23 +30,16 @@ public class WireRepairRecieveBool : MonoBehaviour
             _anim.SetBool(_boolName, true);
         }
     }
-    public string GetCurrentClipName()
-    {
-        _stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
-
-        return _stateInfo.fullPathHash.ToString();
-    }
 
     private void Update()
     {
-        Debug.Log(GetCurrentClipName());
         _currentWeapon = WeaponCycle.CurrentScroll;
-        if (GetCurrentClipName() == "2")
+        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("2"))
         {
             _sChar.enabled = false;
             _pAim.enabled = false;
         }
-        else if (GetCurrentClipName() == "3")
+        else if (_anim.GetCurrentAnimatorStateInfo(0).IsName("3"))
         {
             _sChar.enabled = true;
             _pAim.enabled = true;
