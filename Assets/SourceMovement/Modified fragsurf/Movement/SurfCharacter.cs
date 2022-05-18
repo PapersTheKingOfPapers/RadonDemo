@@ -271,7 +271,7 @@ namespace Fragsurf.Movement {
 
         }
 
-        private void ResetPosition () {
+        public void ResetPosition () {
             
             moveData.velocity = Vector3.zero;
             moveData.origin = _startPosition;
